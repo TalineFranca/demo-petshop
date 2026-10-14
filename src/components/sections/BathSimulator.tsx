@@ -51,7 +51,7 @@ export function BathSimulator() {
     <section id="simulador" aria-labelledby="simulador-title" className="relative pb-24 pt-12 md:pb-32 md:pt-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <header className="max-w-2xl md:ml-[8%]">
-          <p className="font-hand text-2xl text-accent-ink">simulador oficial (e totalmente inventado)</p>
+          <p className="font-hand text-2xl text-accent-ink">simulador de preços</p>
           <h2
             id="simulador-title"
             className="font-display text-[clamp(2.6rem,7.5vw,4.6rem)] font-black leading-[0.92] tracking-tight"

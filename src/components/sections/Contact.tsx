@@ -159,7 +159,6 @@ export function Contact() {
                   <ChatIcon className="h-6 w-6" />
                   Mandar pelo WhatsApp
                 </Button>
-                <span className="font-hand text-xl text-ink-soft">(de mentirinha, prometo)</span>
               </div>
             </form>
 

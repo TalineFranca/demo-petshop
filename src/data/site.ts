@@ -3,7 +3,7 @@
 
 export const site = {
   name: "Focinho Feliz",
-  tagline: "pet shop de bairro (de mentira)",
+  tagline: "pet shop de bairro",
   address: "Rua dos Bigodes, 404 - Vila Imaginária",
   hours: [
     { days: "ter a sex", time: "9h - 19h" },
