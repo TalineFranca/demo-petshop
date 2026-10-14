@@ -65,7 +65,7 @@ export function Polaroid({ pet, flipped, onToggle, rotate = 0, tapeTone = "musta
               />
             </div>
             <p className="mt-2 text-center font-hand text-xl leading-tight sm:text-2xl">{pet.caption}</p>
-            <span className="sr-only">— ver a ficha de {pet.name}</span>
+            <span className="sr-only">, ver a ficha de {pet.name}</span>
           </div>
 
           {/* verso: a ficha */}

@@ -124,7 +124,7 @@ export function Hero() {
           type="button"
           onClick={onLogoClick}
           className="group flex -rotate-2 items-center gap-2.5 text-left"
-          aria-label={`${site.name} — logo (dica: clique cinco vezes seguidas)`}
+          aria-label={`${site.name}, logo (dica: clique cinco vezes seguidas)`}
         >
           <span className="grid h-12 w-12 place-items-center rounded-full border-[2.5px] border-ink bg-accent text-ink transition-transform duration-200 group-hover:rotate-12 group-active:scale-90">
             <PawPrint className="h-6 w-6" />
@@ -264,7 +264,7 @@ export function Hero() {
           </div>
 
           <p className="sr-only">
-            {site.since} — {site.sinceFootnote}
+            {site.since}, {site.sinceFootnote}
           </p>
         </div>
 

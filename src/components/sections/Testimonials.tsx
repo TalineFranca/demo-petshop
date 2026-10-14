@@ -53,7 +53,7 @@ export function Testimonials() {
                       className="h-16 w-16 shrink-0 rounded-full border-[2.5px] border-ink bg-kraft object-cover"
                     />
                     <span>
-                      <span className="block font-hand text-2xl leading-none">— {t.author}</span>
+                      <span className="block font-hand text-2xl leading-none">- {t.author}</span>
                       <span className="block text-sm text-ink-soft">{t.about}</span>
                       <span className={cn("mt-1 flex gap-0.5", right && "justify-end")}>
                         {Array.from({ length: 5 }, (_, k) => (

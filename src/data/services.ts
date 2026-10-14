@@ -43,7 +43,7 @@ export const services: Service[] = [
     title: "Tosa com opinião",
     scribble: "higiênica, máquina ou tesoura",
     description:
-      "A gente escuta o seu pedido — e o olhar do seu pet também. Se ele não aprovar o corte, refazemos o laço por conta da casa.",
+      "A gente escuta o seu pedido, e o olhar do seu pet também. Se ele não aprovar o corte, refazemos o laço por conta da casa.",
     duration: "~1h30",
     priceFrom: 65,
     species: ["dog", "cat"],

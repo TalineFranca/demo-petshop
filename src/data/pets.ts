@@ -78,7 +78,7 @@ export const speciesProfiles: Record<Species, SpeciesProfile> = {
       aside: "(bico e casco também valem)",
     },
     selectorReply:
-      "Anotado: outro bicho. A gente adora! Coelho, hamster, calopsita, jabuti — pode vir, sem pressa.",
+      "Anotado: outro bicho. A gente adora! Coelho, hamster, calopsita, jabuti, pode vir, sem pressa.",
     servicesIntro:
       "Bicho pequeno não curte barulho nem água demais. Por isso a gente tem um jeitinho próprio pra eles.",
     simulatorNote: "obs: coelho não toma banho de água. aqui o ‘banho’ é a seco, prometido.",
@@ -98,7 +98,7 @@ export type GalleryPet = {
   species: Species;
   /** Raça / descrição curta */
   breed: string;
-  /** Foto (placeholder em public/images — troque pelo arquivo real) */
+  /** Foto (placeholder em public/images, troque pelo arquivo real) */
   image: string;
   alt: string;
   /** Legenda manuscrita na frente da polaroid */

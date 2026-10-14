@@ -23,7 +23,7 @@ const instrument = Instrument_Sans({
   display: "swap",
 });
 
-const title = "Focinho Feliz — banho, tosa e paciência infinita";
+const title = "Focinho Feliz - banho, tosa e paciência infinita";
 const description =
   "Seu cachorro rolou na lama de novo? A gente resolve. Pet shop fictício criado como site demonstrativo: simule um banho, folheie as fichas de serviço e conheça os clientes de 4 patas.";
 
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title,
     description,
     url: "/",
-    images: [{ url: "/images/og.png", width: 1200, height: 630, alt: "Focinho Feliz — pet shop fictício" }],
+    images: [{ url: "/images/og.png", width: 1200, height: 630, alt: "Focinho Feliz - pet shop fictício" }],
   },
   twitter: {
     card: "summary_large_image",

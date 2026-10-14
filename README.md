@@ -1,4 +1,4 @@
-# Focinho Feliz — pet shop fictício
+# Focinho Feliz - pet shop fictício
 
 Site demonstrativo (portfólio) de um pet shop que **não existe**. Nome, endereço, telefone, preços e depoimentos são inventados.
 
@@ -45,4 +45,4 @@ Com `prefers-reduced-motion`, animações decorativas, pegadas e o giro 3D das p
 
 ---
 
-Site demonstrativo criado por Lunia Sites — empresa fictícia.
+Site demonstrativo criado por Lunia Sites - empresa fictícia.

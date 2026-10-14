@@ -216,7 +216,7 @@ export function BathSimulator() {
               <Button href="#bilhete" variant="ink">
                 Gostei. Quero marcar →
               </Button>
-              <p className="text-xs text-ink-soft">*preços fictícios — nenhum pet real foi cobrado.</p>
+              <p className="text-xs text-ink-soft">*preços fictícios, nenhum pet real foi cobrado.</p>
             </div>
           </div>
         </div>

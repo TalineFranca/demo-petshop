@@ -61,7 +61,7 @@ export function PetSelector() {
         <PaperCard tone="ruled" rotate={1.5} tape="corners" className="p-5 pl-14 sm:p-8 sm:pl-16 md:col-span-7 md:-mt-6">
           <fieldset>
             <legend className="font-hand text-2xl text-accent-ink sm:text-3xl">
-              Ficha de inscrição — marque com um X
+              Ficha de inscrição - marque com um X
             </legend>
 
             <div className="mt-4 divide-y-2 divide-dashed divide-ink/15">
