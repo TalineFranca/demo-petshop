@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Paleta e fontes
+   ------------------------------------------------------------------ */
+@theme {
+  --color-moss: #4b5a2a;
+  --color-moss-deep: #343f1c;
+  --color-moss-soft: #8a9660;
+  --color-cream: #f3ead7;
+  --color-paper: #fbf6ea;
+  --color-kraft: #d8c29c;
+  --color-terracotta: #c0623f;
+  --color-terracotta-ink: #a3472a;
+  --color-mustard: #e0a91f;
+  --color-mustard-soft: #f1d27a;
+  --color-ink: #26221c;
+  --color-ink-soft: #5a5246;
+}
+
+@theme inline {
+  --font-display: var(--font-fraunces), "Georgia", serif;
+  --font-hand: var(--font-caveat), "Comic Sans MS", cursive;
+  --font-sans: var(--font-instrument), system-ui, sans-serif;
+  /* muda conforme o bicho escolhido no seletor (ver [data-pet]) */
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+}
+
+/* ------------------------------------------------------------------
+   Tema por bicho
+   ------------------------------------------------------------------ */
+:root,
+[data-pet="dog"] {
+  --accent: var(--color-terracotta);
+  --accent-ink: var(--color-terracotta-ink);
+}
+[data-pet="cat"] {
+  --accent: var(--color-moss-soft);
+  --accent-ink: var(--color-moss);
+}
+[data-pet="other"] {
+  --accent: var(--color-mustard);
+  --accent-ink: #7a5a06;
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  /* textura de papel: ruído fractal bem sutil + fibras */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .28 0 0 0 0 .18 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 20% 0%, rgba(255, 255, 255, 0.5), transparent 60%);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-mustard);
+  color: var(--color-ink);
+}
+
+/* Foco visível e com cara do site (nada de anel azul padrão) */
+:focus-visible {
+  outline: 3px dashed var(--color-ink);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+.on-dark :focus-visible,
+.on-dark:focus-visible {
+  outline-color: var(--color-mustard);
+}
+
+.sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------
+   Utilitários de “caderninho”
+   ------------------------------------------------------------------ */
+
+/* Borda que parece desenhada à mão */
+.hand-border {
+  border-radius: 255px 18px 225px 18px / 18px 225px 18px 255px;
+}
+
+/* Papel pautado (bilhete, fichas) */
+.ruled {
+  background-image:
+    linear-gradient(to right, transparent 2.6rem, rgba(192, 98, 63, 0.55) 2.6rem, rgba(192, 98, 63, 0.55) calc(2.6rem + 1.5px), transparent calc(2.6rem + 1.5px)),
+    repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.9rem - 1px), rgba(75, 90, 42, 0.22) calc(1.9rem - 1px), rgba(75, 90, 42, 0.22) 1.9rem);
+  background-position: 0 1.2rem;
+}
+
+/* Papel quadriculado */
+.grid-paper {
+  background-image:
+    linear-gradient(rgba(75, 90, 42, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(75, 90, 42, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Textura de papel kraft / cortiça clarinha */
+.kraft {
+  background-color: var(--color-kraft);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='k'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6 .04' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .3 0 0 0 0 .15 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23k)'/%3E%3C/svg%3E");
+}
+
+/* Marca-texto torto atrás de uma palavra */
+.highlight {
+  background-image: linear-gradient(100deg, transparent 2%, var(--color-mustard-soft) 4%, var(--color-mustard-soft) 94%, transparent 97%);
+  background-size: 100% 0.55em;
+  background-position: 0 85%;
+  background-repeat: no-repeat;
+  padding-inline: 0.12em;
+}
+
+/* Borda rasgada (mask) — topo e base */
+.torn-bottom {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 10' preserveAspectRatio='none'%3E%3Cpath d='M0 0H200V6L195 9 189 5 183 8 176 4 170 9 163 6 157 9 150 5 144 8 137 4 131 9 124 6 118 8 111 4 105 9 98 5 92 8 85 4 79 9 72 6 66 9 59 5 53 8 46 4 40 9 33 6 27 8 20 4 14 9 7 5 0 8Z'/%3E%3C/svg%3E") bottom / 100% 14px no-repeat,
+    linear-gradient(#000, #000) top / 100% calc(100% - 13px) no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 10' preserveAspectRatio='none'%3E%3Cpath d='M0 0H200V6L195 9 189 5 183 8 176 4 170 9 163 6 157 9 150 5 144 8 137 4 131 9 124 6 118 8 111 4 105 9 98 5 92 8 85 4 79 9 72 6 66 9 59 5 53 8 46 4 40 9 33 6 27 8 20 4 14 9 7 5 0 8Z'/%3E%3C/svg%3E") bottom / 100% 14px no-repeat,
+    linear-gradient(#000, #000) top / 100% calc(100% - 13px) no-repeat;
+}
+
+/* Sombra de papel colado (curta, quente, nada de sombra genérica difusa) */
+.paper-shadow {
+  box-shadow:
+    0 1px 0 rgba(38, 34, 28, 0.08),
+    2px 3px 0 -1px rgba(38, 34, 28, 0.12),
+    6px 10px 14px -10px rgba(60, 40, 20, 0.45);
+}
+
+/* Carimbo com tinta falhada */
+.stamp-ink {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.2 2.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.2 2.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");
+}
+
+/* ------------------------------------------------------------------
+   Cursor de patinha (ativado por classe no <html>, ver PawCursor)
+   ------------------------------------------------------------------ */
+@media (pointer: fine) {
+  html.paw-cursor,
+  html.paw-cursor * {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='%2326221c' stroke='%23fbf6ea' stroke-width='1.5'%3E%3Cellipse cx='16' cy='21' rx='7' ry='6'/%3E%3Cellipse cx='7' cy='13' rx='3' ry='3.8'/%3E%3Cellipse cx='12.5' cy='7.5' rx='3' ry='3.8'/%3E%3Cellipse cx='19.5' cy='7.5' rx='3' ry='3.8'/%3E%3Cellipse cx='25' cy='13' rx='3' ry='3.8'/%3E%3C/g%3E%3C/svg%3E") 16 16, auto;
+  }
+  html.paw-cursor a,
+  html.paw-cursor button,
+  html.paw-cursor label,
+  html.paw-cursor [role="button"],
+  html.paw-cursor input[type="radio"],
+  html.paw-cursor input[type="checkbox"],
+  html.paw-cursor a *,
+  html.paw-cursor button *,
+  html.paw-cursor label * {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='%23c0623f' stroke='%2326221c' stroke-width='1.5'%3E%3Cellipse cx='16' cy='21' rx='7' ry='6'/%3E%3Cellipse cx='7' cy='13' rx='3' ry='3.8'/%3E%3Cellipse cx='12.5' cy='7.5' rx='3' ry='3.8'/%3E%3Cellipse cx='19.5' cy='7.5' rx='3' ry='3.8'/%3E%3Cellipse cx='25' cy='13' rx='3' ry='3.8'/%3E%3C/g%3E%3C/svg%3E") 16 16, pointer;
+  }
+  html.paw-cursor input[type="text"],
+  html.paw-cursor input[type="tel"],
+  html.paw-cursor textarea {
+    cursor: text;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Pequenas animações em CSS
+   ------------------------------------------------------------------ */
+@keyframes blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+.blink {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: blink 5.5s infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.wiggle {
+  animation: wiggle 2.8s ease-in-out infinite;
+}
+
+@keyframes wag {
+  0%, 100% { transform: rotate(-12deg); }
+  50% { transform: rotate(14deg); }
+}
+.wag {
+  transform-box: fill-box;
+  transform-origin: 0% 100%;
+  animation: wag 0.6s ease-in-out infinite;
+}
+
+@keyframes bubble-up {
+  0% { transform: translateY(0) scale(0.7); opacity: 0; }
+  20% { opacity: 0.9; }
+  100% { transform: translateY(-70px) scale(1.1); opacity: 0; }
+}
+.bubble {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: bubble-up 3.2s ease-in infinite;
+}
+
+/* prefers-reduced-motion: corta animações decorativas */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
