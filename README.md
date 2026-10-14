@@ -21,19 +21,18 @@ Todo texto editável fica em `src/data/` (os tipos ficam junto):
 
 | Arquivo | O que tem |
 | --- | --- |
-| `pets.ts` | textos que mudam por bicho (hero, seletor, mascote, som do easter egg) e as fichas da galeria |
+| `pets.ts` | textos que mudam por bicho (hero, seletor, mascote, falas do easter egg) e as fichas da galeria |
 | `services.ts` | fichas de serviço e para quais bichos cada uma aparece |
 | `prices.ts` | preços do simulador de banho (porte, pelagem, extras) |
 | `testimonials.ts` | depoimentos "escritos pelos pets" |
 | `site.ts` | nome, endereço, horário, telefone fictício e o crédito do rodapé |
 
 Fotos: os arquivos em `public/images/pet-*.svg` são placeholders. Troque por fotos reais com o mesmo nome (ou mude o caminho em `pets.ts`) e ajuste o `alt`.
-Sons: `public/sounds/*.wav` são sintetizados; pode trocar por gravações curtas.
 
 ## Interações
 
 - Mascote do topo segue o cursor com os olhos (no celular, olha para onde você toca); clicar nele faz carinho.
-- Clicar 5 vezes seguidas no logo faz o mascote latir / miar / guinchar (o som só toca porque veio de um clique).
+- Clicar 5 vezes seguidas no logo faz o mascote latir / miar / guinchar num balão de fala.
 - "Quem é você?" troca textos, serviços, cor de destaque e mascote do site inteiro (`PetContext`).
 - Fichas de serviço: arraste a de cima, use os botões ou as setas do teclado.
 - Simulador de banho com preço montado em tempo real.

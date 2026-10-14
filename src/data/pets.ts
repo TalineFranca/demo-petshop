@@ -10,8 +10,8 @@ export type SpeciesProfile = {
   tagline: string;
   /** Mascote desenhado no hero */
   mascotName: string;
-  /** Som do easter egg (clique várias vezes no logo) */
-  sound: { src: string; onomatopoeia: string; announce: string };
+  /** Easter egg: o que o mascote "fala" depois de 5 cliques no logo */
+  easterEgg: { onomatopoeia: string; announce: string };
   hero: {
     kicker: string;
     titleLines: [string, string];
@@ -32,7 +32,7 @@ export const speciesProfiles: Record<Species, SpeciesProfile> = {
     label: "Cachorro",
     tagline: "late, abana, rola na lama",
     mascotName: "Biscoito",
-    sound: { src: "/sounds/bark.wav", onomatopoeia: "AU! AU!", announce: "O Biscoito latiu." },
+    easterEgg: { onomatopoeia: "AU! AU!", announce: "O Biscoito latiu." },
     hero: {
       kicker: "banho, tosa & paciência infinita",
       titleLines: ["Seu cachorro rolou", "na lama de novo?"],
@@ -51,7 +51,7 @@ export const speciesProfiles: Record<Species, SpeciesProfile> = {
     label: "Gato",
     tagline: "julga, derruba coisas, dorme 16h",
     mascotName: "Paçoca",
-    sound: { src: "/sounds/meow.wav", onomatopoeia: "MIAU.", announce: "A Paçoca miou." },
+    easterEgg: { onomatopoeia: "MIAU.", announce: "A Paçoca miou." },
     hero: {
       kicker: "secador silencioso, zero julgamento",
       titleLines: ["Seu gato acha que", "banho é traição?"],
@@ -70,7 +70,7 @@ export const speciesProfiles: Record<Species, SpeciesProfile> = {
     label: "Outro bicho",
     tagline: "coelho, hamster, calopsita, jabuti…",
     mascotName: "Tremoço",
-    sound: { src: "/sounds/squeak.wav", onomatopoeia: "IIIK!", announce: "O Tremoço fez iiik." },
+    easterEgg: { onomatopoeia: "IIIK!", announce: "O Tremoço fez iiik." },
     hero: {
       kicker: "focinhos pequenos, cuidados enormes",
       titleLines: ["Coelho, calopsita,", "porquinho-da-índia?"],

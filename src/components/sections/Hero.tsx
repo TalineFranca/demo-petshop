@@ -90,20 +90,15 @@ export function Hero() {
     say(lines[pokeIndex.current++ % lines.length]);
   };
 
-  // Easter egg: 5 cliques rápidos no logo = latido/miado. Som só toca porque veio de um clique.
+  // Easter egg: 5 cliques rápidos no logo e o mascote late/mia no balão.
   const onLogoClick = () => {
     const now = Date.now();
     logoClicks.current = [...logoClicks.current.filter((t) => now - t < LOGO_WINDOW_MS), now];
     if (logoClicks.current.length >= LOGO_CLICKS) {
       logoClicks.current = [];
-      try {
-        const audio = new Audio(profile.sound.src);
-        audio.volume = 0.55;
-        void audio.play().catch(() => {});
-      } catch {}
-      say(profile.sound.onomatopoeia, true);
+      say(profile.easterEgg.onomatopoeia, true);
       setAnnounce("");
-      requestAnimationFrame(() => setAnnounce(profile.sound.announce));
+      requestAnimationFrame(() => setAnnounce(profile.easterEgg.announce));
     } else if (logoClicks.current.length === 3) {
       say("?");
     }
