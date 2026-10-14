@@ -23,12 +23,19 @@ const instrument = Instrument_Sans({
   display: "swap",
 });
 
+/** URL base do site para Open Graph. Aceita o domínio com ou sem "https://"; na Vercel, cai no domínio de produção. */
+function siteUrl() {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  if (!raw) return new URL("http://localhost:3000");
+  return new URL(/^https?:\/\//.test(raw) ? raw : `https://${raw}`);
+}
+
 const title = "Focinho Feliz - banho, tosa e paciência infinita";
 const description =
   "Seu cachorro rolou na lama de novo? A gente resolve. Pet shop fictício criado como site demonstrativo: simule um banho, folheie as fichas de serviço e conheça os clientes de 4 patas.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: siteUrl(),
   title: { default: title, template: "%s · Focinho Feliz" },
   description,
   applicationName: "Focinho Feliz",
