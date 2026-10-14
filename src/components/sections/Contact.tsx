@@ -83,7 +83,7 @@ export function Contact() {
           </p>
 
           <PaperCard tone="kraft" rotate={-3} tape="top" tapeTone="paper" className="mt-12 max-w-xs p-5 pt-7 text-sm">
-            <p className="font-hand text-2xl leading-none text-terracotta-ink">onde a gente (não) fica:</p>
+            <p className="font-hand text-2xl leading-none text-terracotta-ink">localização:</p>
             <p className="mt-2">{site.address}</p>
             <p className="mt-1">
               WhatsApp de mentira: <strong className="whitespace-nowrap">{site.phoneDisplay}</strong>
