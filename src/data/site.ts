@@ -8,7 +8,7 @@ export const site = {
   hours: [
     { days: "ter a sex", time: "9h - 19h" },
     { days: "sábado", time: "8h - 14h" },
-    { days: "dom e seg", time: "a gente também dorme" },
+    { days: "dom e seg", time: "fechado" },
   ],
   phoneDisplay: "(00) 90000-0000",
   since: "desde 2019*",
