@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480">
+  <rect width="480" height="480" fill="#e0a91f"/>
+  <g opacity=".14" stroke="#fff" stroke-width="10"><path d="M-200 0 L280 480"/><path d="M-160 0 L320 480"/><path d="M-120 0 L360 480"/><path d="M-80 0 L400 480"/><path d="M-40 0 L440 480"/><path d="M0 0 L480 480"/><path d="M40 0 L520 480"/><path d="M80 0 L560 480"/><path d="M120 0 L600 480"/><path d="M160 0 L640 480"/><path d="M200 0 L680 480"/><path d="M240 0 L720 480"/><path d="M280 0 L760 480"/><path d="M320 0 L800 480"/></g>
+  <circle cx="240" cy="260" r="190" fill="#fff" opacity=".18"/>
+  <ellipse cx="240" cy="480" rx="150" ry="110" fill="#c9a27a" stroke="#26221c" stroke-width="5" stroke-linejoin="round"/>
+      <ellipse cx="240" cy="270" rx="118" ry="108" fill="#c9a27a" stroke="#26221c" stroke-width="5" stroke-linejoin="round"/>
+      <ellipse cx="124" cy="300" rx="40" ry="110" transform="rotate(22 124 300)" fill="#c9a27a" stroke="#26221c" stroke-width="5" stroke-linejoin="round"/><ellipse cx="356" cy="300" rx="40" ry="110" transform="rotate(-22 356 300)" fill="#c9a27a" stroke="#26221c" stroke-width="5" stroke-linejoin="round"/>
+      <ellipse cx="240" cy="315" rx="54" ry="40" fill="#efe0c8"/>
+      <g fill="#26221c" stroke="#26221c" stroke-width="3"><circle cx="188" cy="255" r="14"/><circle cx="292" cy="255" r="14"/></g>
+  <g fill="#26221c"><circle cx="188" cy="255" r="7"/><circle cx="292" cy="255" r="7"/></g>
+  <g fill="#fff"><circle cx="192" cy="250" r="3.5"/><circle cx="296" cy="250" r="3.5"/></g>
+      <path d="M230 300 q10 -8 20 0 q-10 10 -20 0Z" fill="#e8857a" stroke="#26221c" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M240 308 v10 M224 322 q16 8 16 -4 q0 12 16 4" fill="none" stroke="#26221c" stroke-width="4" stroke-linecap="round"/>
+  <g transform="translate(18 18)"><rect width="122" height="30" rx="4" fill="#fbf6ea" opacity=".9"/><text x="61" y="21" font-family="Verdana, sans-serif" font-size="14" font-weight="700" letter-spacing="2" text-anchor="middle" fill="#26221c">PLACEHOLDER</text></g>
+</svg>
